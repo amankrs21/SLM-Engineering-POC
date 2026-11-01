@@ -1,0 +1,123 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: poc
+      POSTGRES_USER: poc
+      POSTGRES_PASSWORD: poc-local-only
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U poc -d poc"]
+      interval: 5s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    volumes:
+      - qdrant_data:/qdrant/storage
+    ports:
+      - "127.0.0.1:6333:6333"
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    environment:
+      PHOENIX_WORKING_DIR: /data
+      PHOENIX_ENABLE_AUTH: "false"
+    volumes:
+      - phoenix_data:/data
+    ports:
+      - "127.0.0.1:6006:6006"
+
+  slm-server:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    command: ["-m", "/models/Qwen3-4B-Q4_K_M.gguf", "--alias", "Qwen3-4B-Q4_K_M", "--jinja", "--parallel", "1", "--host", "0.0.0.0", "--port", "8080", "--ctx-size", "16384"]
+    volumes:
+      - ./models:/models:ro
+    ports:
+      - "127.0.0.1:8080:8080"
+
+  # retrieval-models:
+  #   build:
+  #     context: .
+  #     dockerfile: backend/Dockerfile
+  #     args:
+  #       WITH_MODELS: "1"
+  #   command: ["uvicorn", "rag_api.model_server:app", "--host", "0.0.0.0", "--port", "8081"]
+  #   environment:
+  #     HF_HOME: /models-cache
+  #     HF_TOKEN: ${HF_TOKEN:-}
+  #     TOKENIZERS_PARALLELISM: "false"
+  #     OMP_NUM_THREADS: "4"
+  #   volumes:
+  #     - model_cache:/models-cache
+  #   ports:
+  #     - "127.0.0.1:8081:8081"
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+psycopg://poc:poc-local-only@postgres:5432/poc
+      QDRANT_URL: http://qdrant:6333
+      RETRIEVAL_URL: http://retrieval-models:8081
+      SLM_BASE_URL: http://slm-server:8080/v1
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      MISTRAL_MODEL: ${MISTRAL_MODEL:-mistral-large-4}
+      JINA_API_KEY: ${JINA_API_KEY:-}
+      COHERE_TRIAL_KEY: ${COHERE_TRIAL_KEY:-}
+      EMBEDDING_PROVIDER: jina
+      RERANK_PROVIDER: jina
+      RERANK_FALLBACK_PROVIDER: cohere
+      DATA_DIR: /kb
+      DEFAULT_CORPUS: gep-2026-06-jina-v5
+      PHOENIX_COLLECTOR_ENDPOINT: http://phoenix:6006/v1/traces
+    volumes:
+      - ./data:/kb
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      slm-server:
+        condition: service_started
+      # retrieval-models:
+      #   condition: service_started
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "127.0.0.1:7860:80"
+    depends_on:
+      - backend
+
+  ingest:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    profiles: ["jobs"]
+    entrypoint: ["python", "-m", "rag_api.ingest"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://poc:poc-local-only@postgres:5432/poc
+      QDRANT_URL: http://qdrant:6333
+      JINA_API_KEY: ${JINA_API_KEY:-}
+      EMBEDDING_PROVIDER: jina
+      DATA_DIR: /kb
+    volumes:
+      - ./data:/kb
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+
+volumes:
+  postgres_data:
+  qdrant_data:
+  phoenix_data:
+  model_cache:
