@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1018">
+  <meta name="description" content="Compare a local small language model with hosted Mistral Large on the same evidence-backed question.">
+  <title>RAG Lab · Model comparison</title>
+  <link rel="stylesheet" href="/style.css?v=6">
+  <script src="/app.js?v=6" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Chat navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">✦</div>
+        <div><strong>RAG Lab</strong><span>MODEL COMPARISON</span></div>
+      </div>
+      <button id="new-chat" class="new-chat" type="button"><span aria-hidden="true">＋</span> New chat <kbd>⌘ K</kbd></button>
+      <div class="sidebar-label"><span>YOUR SESSIONS</span><span id="session-count">0</span></div>
+      <nav id="session-list" class="session-list" aria-label="Saved chat sessions"></nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span class="note-glow"></span><strong>Evidence first</strong><small>Both models retrieve and reason independently.</small></div>
+        <span class="sidebar-caption">LOCAL DEMO · VERSION 0.2</span>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="heading-block">
+          <div class="eyebrow"><span class="eyebrow-line"></span> DUAL MODEL WORKSPACE</div>
+          <h1>One question. <em>Two perspectives.</em></h1>
+          <p>Compare grounded answers from a local SLM and hosted Mistral Large.</p>
+        </div>
+        <div class="top-actions">
+          <div id="api-status" class="connection"><span class="connection-dot"></span><span>Connecting</span></div>
+          <a class="top-link" href="http://127.0.0.1:6006/projects" target="_blank" rel="noopener noreferrer">View Phoenix ↗</a>
+        </div>
+      </header>
+
+      <div class="model-tabs" aria-label="Choose model panel">
+        <button id="tab-slm" type="button" aria-pressed="true">Local SLM</button>
+        <button id="tab-mistral" type="button" aria-pressed="false">Mistral Large</button>
+      </div>
+      <section class="comparison" aria-label="Model responses">
+        <article class="model-panel slm-panel active-mobile" aria-labelledby="slm-title">
+          <div class="model-header">
+            <span class="model-icon slm-icon" aria-hidden="true">S</span>
+            <div class="model-heading"><h2 id="slm-title">Local SLM</h2><span>Qwen3 · 4B · on device</span></div>
+            <span id="slm-status" class="model-status">Ready</span>
+          </div>
+          <div id="slm-messages" class="messages" role="log" aria-live="polite" aria-label="Local SLM conversation"></div>
+        </article>
+
+        <div class="compare-divider" aria-hidden="true"><span>VS</span></div>
+
+        <article class="model-panel mistral-panel" aria-labelledby="mistral-title">
+          <div class="model-header">
+            <span class="model-icon mistral-icon" aria-hidden="true">M</span>
+            <div class="model-heading"><h2 id="mistral-title">Mistral Large</h2><span>Hosted API · independent run</span></div>
+            <span id="mistral-status" class="model-status">Ready</span>
+          </div>
+          <div id="mistral-messages" class="messages" role="log" aria-live="polite" aria-label="Mistral conversation"></div>
+        </article>
+      </section>
+
+      <form id="composer" class="composer">
+        <div class="composer-inner">
+          <label for="question" class="sr-only">Ask a question</label>
+          <textarea id="question" rows="2" placeholder="Ask about forecasts, compare data, or ask how I can help…" autocomplete="off"></textarea>
+          <button id="send-button" type="submit"><span>Send to both</span><span class="send-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div class="composer-foot"><span>Each model chooses its tools independently</span><span>Enter to send · Shift + Enter for new line</span></div>
+      </form>
+    </main>
+  </div>
+  <dialog id="delete-dialog" class="confirm-dialog" aria-labelledby="delete-dialog-title">
+    <form method="dialog">
+      <div class="confirm-icon" aria-hidden="true">×</div>
+      <h2 id="delete-dialog-title">Delete this chat?</h2>
+      <p id="delete-chat-title"></p>
+      <span class="confirm-note">Its messages and runs will be removed from this demo.</span>
+      <div class="confirm-actions">
+        <button type="submit" value="cancel" class="cancel-delete">Cancel</button>
+        <button id="confirm-delete" type="submit" value="confirm" class="confirm-delete">Delete chat</button>
+      </div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
