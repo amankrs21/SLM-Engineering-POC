@@ -1,0 +1,27 @@
+{
+  "corpus": "gep-2026-06-v1",
+  "publisher": "World Bank",
+  "edition": "June 2026",
+  "files": [
+    {"path": "raw/report.pdf", "title": "Global Economic Prospects, June 2026", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/original/GEP-Jun-2026.pdf"},
+    {"path": "raw/chapter1_highlights.pdf", "title": "Chapter 1 highlights", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Chapter-1-Highlights.pdf"},
+    {"path": "raw/chapter2_highlights.pdf", "title": "Chapter 2 highlights", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Chapter-2-Highlights.pdf"},
+    {"path": "raw/chapter3_highlights.pdf", "title": "Chapter 3 highlights", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Chapter-3-highlights.pdf"},
+    {"path": "raw/chapter4_highlights.pdf", "title": "Chapter 4 highlights", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Chapter-4-highlights.pdf"},
+    {"path": "raw/regional_south_asia.pdf", "title": "South Asia regional highlights", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-SAR.pdf"},
+    {"path": "raw/regional_latin_america.pdf", "title": "Latin America and the Caribbean regional highlights", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-LAC.pdf"},
+    {"path": "raw/regional_sub_saharan_africa.pdf", "title": "Sub-Saharan Africa regional highlights", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-SSA.pdf"},
+    {"path": "raw/figure_1_1.xlsx", "title": "Chapter 1 figure 1.1", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-June-2026-Chapter1-Fig1-1.xlsx"},
+    {"path": "raw/figure_1_5.xlsx", "title": "Chapter 1 figure 1.5", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-June-2026-Chapter1-Fig1-5.xlsx"},
+    {"path": "raw/figure_2_1.xlsx", "title": "Chapter 2 figure 2.1", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-June-2026-Chapter2-Fig2-1.xlsx"},
+    {"path": "raw/figure_4_13.xlsx", "title": "Chapter 4 figure 4.13", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-June-2026-Chapter4-Fig4-13.xlsx"},
+    {"path": "raw/chapter2_south_asia.xlsx", "title": "Chapter 2 South Asia data", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Chapter-2-SA-data.xlsx"},
+    {"path": "raw/statistical_appendix.xlsx", "title": "Statistical appendix", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Table-Statistical-Appendix.xlsx"},
+    {"path": "raw/table_1_1.xlsx", "title": "Table 1.1 data", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Table-1-1.xlsx"},
+    {"path": "raw/GEPCSV.csv", "title": "GEP country and regional forecasts", "source_url": "https://databankfiles.worldbank.org/public/ddpext_download/GEP_CSV.zip"},
+    {"path": "raw/GEPSeries.csv", "title": "GEP indicator definitions", "source_url": "https://databankfiles.worldbank.org/public/ddpext_download/GEP_CSV.zip"},
+    {"path": "derived/press_release_summary.txt", "title": "Derived press release facts", "source_url": "https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release", "derived": true},
+    {"path": "derived/south_asia_notes.txt", "title": "Derived South Asia facts", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-SAR.pdf", "derived": true},
+    {"path": "derived/debt_notes.txt", "title": "Derived sovereign debt facts", "source_url": "https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Chapter-3-highlights.pdf", "derived": true}
+  ]
+}

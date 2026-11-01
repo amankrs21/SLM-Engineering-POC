@@ -1,0 +1,8 @@
+World Bank Global Economic Prospects, June 2026 — South Asia POC notes
+Source PDF: https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Regional-Highlights-SAR.pdf
+Source CSV: https://databankfiles.worldbank.org/public/ddpext_download/GEP_CSV.zip
+Prepared: 2026-10-31
+
+The June 2026 forecast for South Asia is 6.3 percent growth in 2026 and 6.9 percent in 2027.
+The same CSV gives India 6.6 percent for 2026 and 7.2 percent for 2027.
+These are paraphrased, derived notes for text-file ingestion tests. For numerical answers, cite the original PDF or CSV row.

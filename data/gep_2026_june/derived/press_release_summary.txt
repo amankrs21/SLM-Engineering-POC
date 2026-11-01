@@ -1,0 +1,8 @@
+World Bank Global Economic Prospects, June 2026 — derived POC notes
+Source: https://www.worldbank.org/en/news/press-release/2026/06/11/global-economic-prospects-june-2026-press-release
+Prepared: 2026-10-31
+
+The World Bank projected global growth of 2.5 percent in 2026 and 2.8 percent in 2027.
+The same release projected developing-economy growth of 3.6 percent in 2026, following 4.4 percent in 2025.
+For South Asia, it projected growth of 6.3 percent in 2026 and 6.9 percent in 2027.
+These notes paraphrase selected facts for text-file ingestion tests. Use the original report or CSV for precise data and cite the underlying source in answers.

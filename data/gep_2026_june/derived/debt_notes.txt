@@ -1,0 +1,7 @@
+World Bank Global Economic Prospects, June 2026 — sovereign debt POC notes
+Source PDF: https://thedocs.worldbank.org/en/doc/2b672b3b0415d6b66c45b66579db4ef5-0050012026/related/GEP-Jun-2026-Chapter-3-highlights.pdf
+Prepared: 2026-10-31
+
+The report's Chapter 3 highlights say aggregate government debt among emerging market and developing economies rose from below 40 percent of GDP in 2010 to above 70 percent.
+Higher existing debt is linked to a stronger increase in borrowing costs when debt rises further.
+These are paraphrased, derived notes for text-file ingestion tests. Cite the original PDF page when answering substantive questions.
