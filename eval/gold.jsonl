@@ -1,0 +1,16 @@
+{"id":"world_2026","group":"world_followup","question":"World Bank GEP June 2026 ke hisaab se 2026 global GDP growth forecast kya hai?","expected_terms":["2.5"],"expected_source":""}
+{"id":"world_2027_followup","group":"world_followup","question":"Aur 2027 mein?","expected_terms":["2.8"],"expected_source":""}
+{"id":"south_asia_2026","group":"south_asia_followup","question":"South Asia GDP growth forecast 2026 kya hai?","expected_terms":["6.3"],"expected_source":""}
+{"id":"south_asia_2027_followup","group":"south_asia_followup","question":"Aur agle saal?","expected_terms":["6.9"],"expected_source":""}
+{"id":"india_2026","group":"india_followup","question":"GEP CSV mein India ka 2026 growth forecast kya hai?","expected_terms":["6.6"],"expected_source":"GEPCSV.csv"}
+{"id":"india_2027_followup","group":"india_followup","question":"2027 mein kitna?","expected_terms":["7.2"],"expected_source":""}
+{"id":"eap_2026","group":"eap","question":"East Asia and Pacific ka 2026 growth forecast kya hai?","expected_terms":["4.2"],"expected_source":""}
+{"id":"lac_2026","group":"lac","question":"Latin America and the Caribbean ka 2026 forecast kya hai?","expected_terms":["2.2"],"expected_source":""}
+{"id":"ssa_2026","group":"ssa","question":"Sub-Saharan Africa ka 2026 GDP growth forecast kya hai?","expected_terms":["4"],"expected_source":""}
+{"id":"eca_2027","group":"eca","question":"Europe and Central Asia ka 2027 GDP growth forecast kya hai?","expected_terms":["2.3"],"expected_source":""}
+{"id":"mna_2026","group":"mna","question":"Middle East, North Africa, Afghanistan and Pakistan region ka 2026 GDP growth forecast kya hai?","expected_terms":["1.6"],"expected_source":""}
+{"id":"china_2027","group":"china","question":"China ka 2027 GDP growth forecast kya hai?","expected_terms":["4.3"],"expected_source":""}
+{"id":"debt_rise","group":"debt","question":"Chapter 3 ke mutabik EMDE government debt 2010 se ab tak GDP ke kitne percent se kitne percent tak badha?","expected_terms":["40","70"],"expected_source":""}
+{"id":"debt_service","group":"debt_service","question":"Chapter 3 highlights ke mutabik 2025 mein debt servicing government revenue ka approx kitna percent tha?","expected_terms":["10"],"expected_source":"chapter3_highlights.pdf"}
+{"id":"commodity_revenue","group":"commodity","question":"Chapter 4 highlights mein 1 percent commodity price increase se same-year fiscal revenue kitna badhta hai?","expected_terms":["0.3"],"expected_source":"chapter4_highlights.pdf"}
+{"id":"missing_data","group":"missing","question":"GEP June 2026 mein 2035 South Asia growth forecast kya diya hai?","expected_terms":[],"expected_source":"","should_abstain":true}
